@@ -496,7 +496,7 @@ export default class MainVision {
             mars.rotation.y = ((elapsed_t) * (360 / 1) * rotateScale) / min2ms / 1000;
 
             jupiter.position.x = Math.cos(radians * 365 / 4332) * jupiter_distance;
-            jupiter.position.z = Math.sin(radians * 356 / 4332) * jupiter_distance;
+            jupiter.position.z = Math.sin(radians * 365 / 4332) * jupiter_distance;
             jupiter.rotation.y = ((elapsed_t) * (360 / 0.41) * rotateScale) / min2ms / 1000;
 
             saturn.position.x = Math.cos(radians / 29.5) * saturn_distance;
