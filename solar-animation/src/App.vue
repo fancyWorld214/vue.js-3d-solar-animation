@@ -1,9 +1,8 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="home">
+    <NavbarComponent class="navbar-component"/>
+    <router-view />
+  </div>
 </template>
 
 <style lang="scss">
@@ -27,4 +26,25 @@ nav {
     }
   }
 }
+
+.navbar-component {
+  position: relative;
+  //background-color: #f0f0f0;
+  padding: 10px;
+}
 </style>
+
+<script>
+import NavbarComponent from '@/components/NavBar.vue';
+
+export default class App {
+  // Define the component name
+  static name = 'App';
+
+  // Define the components property
+  static components = {
+    NavbarComponent,
+  }
+}
+
+</script>

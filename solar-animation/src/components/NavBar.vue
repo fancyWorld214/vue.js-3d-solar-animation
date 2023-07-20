@@ -38,8 +38,10 @@
   
 <script>
 export default class NavbarComponent {
-  showNavibar = false;
-  showVisualTransformationsDropdown = false;
+  constructor() {
+    this.showNavibar = false;
+    this.showVisualTransformationsDropdown = false;
+  }
 
   showNavbar() {
     this.showNavibar = true;
@@ -62,10 +64,13 @@ export default class NavbarComponent {
   
 <style scoped>
 @font-face {
-      font-family: 'Montserrat'; /* Font name to use later */
-      src: url('../assets/fonts/Montserrat-Light.ttf') format('truetype'); /* URL to the TTF file */
-      /* Add other font properties here if needed */
+  font-family: 'Montserrat';
+  /* Font name to use later */
+  src: url('../assets/fonts/Montserrat-Light.ttf') format('truetype');
+  /* URL to the TTF file */
+  /* Add other font properties here if needed */
 }
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -93,7 +98,7 @@ export default class NavbarComponent {
   /* z-index: 3; */
   word-wrap: break-word;
   align-items: center;
-  
+
 }
 
 .navbar-item {
@@ -125,7 +130,7 @@ export default class NavbarComponent {
   width: 25px;
   height: 25px;
   transform-origin: 0 0;
-  background-image: url('../assets/img/home/right-arrow.png');
+  background-image: url('../assets/home/right-arrow.png');
   z-index: 10;
   position: relative;
 }
@@ -181,6 +186,5 @@ export default class NavbarComponent {
   text-decoration: none;
   transition: font-size 0.5s;
 }
-
 </style>
   
