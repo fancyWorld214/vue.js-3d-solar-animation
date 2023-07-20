@@ -260,7 +260,36 @@ export default class MainVision {
         ring.parent = saturn; // 将遮罩设置为土星模型的子网格
 
 
+        var antidisc = BABYLON.MeshBuilder.CreateDisc("antidisc", {
+            radius: innerRadius, // 外半径
+            tessellation: tessellation,
+            arc: 2 * Math.PI, // 圆环的完整弧度
+            updatable: false
+        }, scene);
 
+        var antiring = BABYLON.MeshBuilder.CreateDisc("antiring", {
+            radius: innerRadius, // 内半径
+            tessellation: tessellation,
+            arc: 2 * Math.PI, // 圆环的完整弧度
+            updatable: false
+        }, scene);
+
+        antiring.material = ringMaterial;
+        disc.isInFrustum = function () { // 设置遮罩的裁剪
+            var frustumPlanes = scene._frustumPlanes;
+            for (var i = 0; i < 6; i++) {
+                if (frustumPlanes[i].dotCoordinate(antiring.absolutePosition) < 0) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        // 将光环模型旋转90度，使其变为横向
+        antiring.rotation.x = Math.PI * 3 / 2;
+        antidisc.rotation.x = Math.PI * 3 / 2;
+        antidisc.parent = saturn;
+        antiring.parent = saturn; // 将遮罩设置为土星模型的子网格
 
 
         var material10 = new BABYLON.StandardMaterial("default1", scene);
