@@ -41,7 +41,7 @@ export default class MainVision {
         var skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 1000.0 }, scene);
         var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
         skyboxMaterial.backFaceCulling = false;
-        skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("../../assets/3d-solar-animation/skybox/nebula", scene);
+        skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("3d-solar-animation/skybox/nebula", scene);
         skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
         skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
         skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
@@ -137,69 +137,74 @@ export default class MainVision {
             tessellation: torusSegments,
             }, scene);
                         
+
+            
+            
+
+
         var material0 = new BABYLON.StandardMaterial("default1", scene);
-        material0.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/earth.jpg", scene);
+        material0.diffuseTexture = new BABYLON.Texture("3d-solar-animation/earth.jpg", scene);
         material0.specularColor = new BABYLON.Color3(0, 0, 0);
         material0.emissiveColor = new BABYLON.Color3(0.8, 0.8, 0.8);
         material0.diffuseTexture.vScale = -1;
         material0.diffuseTexture.uScale = -1;
         
         var material1 = new BABYLON.StandardMaterial("default1", scene);
-        material1.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/earthmap.jpg", scene);
+        material1.diffuseTexture = new BABYLON.Texture("3d-solar-animation/earthmap.jpg", scene);
         material1.specularColor = new BABYLON.Color3(0, 0, 0);
         material1.emissiveColor = new BABYLON.Color3(0.8, 0.8, 0.8);
         material1.diffuseTexture.vScale = -1;
         material1.diffuseTexture.uScale = -1;
 
         var material2 = new BABYLON.StandardMaterial("default2", scene);
-        material2.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/moon.jpg", scene);
+        material2.diffuseTexture = new BABYLON.Texture("3d-solar-animation/moon.jpg", scene);
         material2.specularColor = new BABYLON.Color3(0, 0, 0);
         material2.emissiveColor = new BABYLON.Color3(0.8, 0.8, 0.8);
         material2.diffuseTexture.vScale = -1;
         material2.diffuseTexture.uScale = -1;
 
         var material3 = new BABYLON.StandardMaterial("default3", scene);
-        material3.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/sun.jpg", scene);
+        material3.diffuseTexture = new BABYLON.Texture("3d-solar-animation/sun.jpg", scene);
         material3.specularColor = new BABYLON.Color3(0, 0, 0);
         material3.emissiveColor = new BABYLON.Color3(1, 1, 1);
 
         var material4 = new BABYLON.StandardMaterial("default1", scene);
-        material4.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/mars.jpg", scene);
+        material4.diffuseTexture = new BABYLON.Texture("3d-solar-animation/mars.jpg", scene);
         material4.specularColor = new BABYLON.Color3(0, 0, 0);
         material4.emissiveColor = new BABYLON.Color3(0.7, 0.7, 0.7);
         material4.diffuseTexture.vScale = -1;
         material4.diffuseTexture.uScale = -1;
 
         var material5 = new BABYLON.StandardMaterial("default1", scene);
-        material5.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/jupiter.jpg", scene);
+        material5.diffuseTexture = new BABYLON.Texture("3d-solar-animation/jupiter.jpg", scene);
         material5.specularColor = new BABYLON.Color3(0, 0, 0);
         material5.emissiveColor = new BABYLON.Color3(0.6, 0.6, 0.6);
         material5.diffuseTexture.vScale = -1;
         material5.diffuseTexture.uScale = -1;
 
         var material6 = new BABYLON.StandardMaterial("default1", scene);
-        material6.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/neptune.png", scene);
+        material6.diffuseTexture = new BABYLON.Texture("3d-solar-animation/neptune.png", scene);
         material6.specularColor = new BABYLON.Color3(0, 0, 0);
         material6.emissiveColor = new BABYLON.Color3(0.5, 0.5, 0.5);
         material6.diffuseTexture.vScale = -1;
         material6.diffuseTexture.uScale = -1;
 
         var material7 = new BABYLON.StandardMaterial("default1", scene);
-        material7.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/mercury.jpg", scene);
+        material7.diffuseTexture = new BABYLON.Texture("3d-solar-animation/mercury.jpg", scene);
         material7.specularColor = new BABYLON.Color3(0, 0, 0);
         material7.emissiveColor = new BABYLON.Color3(1, 1, 1);
         material7.diffuseTexture.vScale = -1;
         material7.diffuseTexture.uScale = -1;
 
         var material8 = new BABYLON.StandardMaterial("default1", scene);
-        material8.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/venus.jpg", scene);
+        material8.diffuseTexture = new BABYLON.Texture("3d-solar-animation/venus.jpg", scene);
         material8.specularColor = new BABYLON.Color3(0, 0, 0);
         material8.emissiveColor = new BABYLON.Color3(1, 1, 1);
         material8.diffuseTexture.vScale = -1;
         material8.diffuseTexture.uScale = -1;
 
         var material9 = new BABYLON.StandardMaterial("default1", scene);
-        material9.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/uranus.jpg", scene);
+        material9.diffuseTexture = new BABYLON.Texture("3d-solar-animation/uranus.jpg", scene);
         material9.specularColor = new BABYLON.Color3(0, 0, 0);
         material9.emissiveColor = new BABYLON.Color3(0.5, 0.5, 0.5);
         material9.diffuseTexture.vScale = -1;
@@ -208,7 +213,7 @@ export default class MainVision {
 
         // 创建光环材质
         var ringMaterial = new BABYLON.StandardMaterial("RingMaterial", scene);
-        ringMaterial.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/saturnring.jpg", scene);
+        ringMaterial.diffuseTexture = new BABYLON.Texture("3d-solar-animation/saturnring.jpg", scene);
         ringMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0); // 设置光环颜色
         ringMaterial.specularColor = new BABYLON.Color3(0, 0, 0); // 设置光环高光颜色
         ringMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1); // 设置光环自发光颜色
@@ -259,7 +264,7 @@ export default class MainVision {
 
 
         var material10 = new BABYLON.StandardMaterial("default1", scene);
-        material10.diffuseTexture = new BABYLON.Texture("./assets/3d-solar-animation/saturn.jpg", scene);
+        material10.diffuseTexture = new BABYLON.Texture("3d-solar-animation/saturn.jpg", scene);
         material10.specularColor = new BABYLON.Color3(0, 0, 0);
         material10.emissiveColor = new BABYLON.Color3(0.6, 0.6, 0.6);
         material10.diffuseTexture.vScale = -1;
@@ -327,17 +332,9 @@ export default class MainVision {
         material0.diffuseTexture.vOffset = Math.cos(earth_tiltAngle); // 在 V 方向上的偏移
         earth.material = material0;
         // 获取按钮元素
-        var changebutton = document.getElementById("ChangeButton");
 
-        // 添加点击事件监听器
-        changebutton.addEventListener("click", function() {
-            // 当按钮被点击时执行的操作
-            if(earth.material==material0)
-                earth.material=material1;
-            else
-                earth.material=material0; 
 
-        });
+
 
         // 创建自传轴的辅助线
         var rotationAxisHelper = BABYLON.MeshBuilder.CreateLines("rotationAxisHelper", {
@@ -528,6 +525,11 @@ export default class MainVision {
             scene.render();
         }
         );
+
+
+        this.earth=earth;
+        this.material0=material0;
+        this.material1=material1;
     }
 
     setUpCameraMovingPattern(camera, scene) { // Define the movement speed for the camera
@@ -669,6 +671,12 @@ export default class MainVision {
             //     this.engine.resize();
             // });
         }
+    }
+    changeskin(){
+        if(this.earth.material==this.material0)
+            this.earth.material=this.material1;
+        else 
+            this.earth.material=this.material0;
     }
 
 }

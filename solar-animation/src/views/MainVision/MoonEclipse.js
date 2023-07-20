@@ -21,7 +21,7 @@ export default class SunEclipse {
         var skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 1000.0 }, scene);
         var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
         skyboxMaterial.backFaceCulling = false;
-        skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("assets/skybox/nebula", scene);
+        skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("3d-solar-animation/skybox/nebula", scene);
         skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
         skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
         skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
@@ -38,21 +38,21 @@ export default class SunEclipse {
         camera.parent = sun;
 
         var material1 = new BABYLON.StandardMaterial("default1", scene);
-        material1.diffuseTexture = new BABYLON.Texture("assets/earth.jpg", scene);
+        material1.diffuseTexture = new BABYLON.Texture("3d-solar-animation/earth.jpg", scene);
         material1.specularColor = new BABYLON.Color3(0, 0, 0);
         material1.emissiveColor = new BABYLON.Color3(0, 0, 0);
         material1.diffuseTexture.vScale = -1;
         material1.diffuseTexture.uScale = -1;
 
         var material2 = new BABYLON.StandardMaterial("default2", scene);
-        material2.diffuseTexture = new BABYLON.Texture("assets/moon.jpg", scene);
+        material2.diffuseTexture = new BABYLON.Texture("3d-solar-animation/moon.jpg", scene);
         material2.specularColor = new BABYLON.Color3(0, 0, 0);
         material2.emissiveColor = new BABYLON.Color3(0, 0, 0);
         material1.diffuseTexture.vScale = -1;
         material1.diffuseTexture.uScale = -1;
 
         var material3 = new BABYLON.StandardMaterial("default3", scene);
-        material3.diffuseTexture = new BABYLON.Texture("assets/sun.jpg", scene);
+        material3.diffuseTexture = new BABYLON.Texture("3d-solar-animation/sun.jpg", scene);
         material3.specularColor = new BABYLON.Color3(0, 0, 0);
         material3.emissiveColor = new BABYLON.Color3(1, 1, 1);
 
