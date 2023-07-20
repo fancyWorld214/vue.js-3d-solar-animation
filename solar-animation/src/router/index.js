@@ -18,7 +18,7 @@ const routes = [
   {
     path: "/MainVisionmode",
     name: "MainVisionmode",
-    component: () => import("../views/MainVisionmode.vue"),
+    component: () => import('../views/MainVisionmodeView.vue'),
   },
 ]
 
