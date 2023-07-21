@@ -37,12 +37,12 @@ nav {
 <script>
 import NavbarComponent from '@/components/NavBar.vue';
 
-export default class App {
+export default {
   // Define the component name
-  static name = 'App';
+  name: 'App',
 
   // Define the components property
-  static components = {
+  components: {
     NavbarComponent,
   }
 }
