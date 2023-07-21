@@ -1,5 +1,10 @@
 <template>
-  <div class="navbar" :class="{ 'navbar-hovered': showNavibar }" @mouseenter="showNavbar" @mouseleave="hideNavbar">
+  <div
+    class="navbar"
+    :class="{ 'navbar-hovered': showNavibar }"
+    @mouseenter="showNavbar"
+    @mouseleave="hideNavbar"
+  >
     <div class="navbar-items">
       <div class="navbar-item" @mouseenter="showVisualTransformations">
         <span class="navbar-icon"></span>
@@ -16,8 +21,14 @@
         View Mode
         <div class="navbar-dropdown">
           <ul>
-            <li><router-link class="globalFont" to="/VerticalSideView">Side&Vertical View</router-link></li>
-            <li><router-link class="globalFont" to="/MainVisionmode">3D Mode</router-link></li>
+            <li>
+              <a class="globalFont" href="/VerticalSideView"
+                >VerticalSideView</a
+              >
+            </li>
+            <li>
+              <a class="globalFont" href="/MainVisionmode">3D Mode</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -34,7 +45,7 @@
     </div>
   </div>
 </template>
-  
+
 <script>
 import MainVision from "../views/MainVision/MainVision.js";
 
@@ -57,17 +68,13 @@ export default {
     },
 
     changeSkin(str) {
-      if(!this.inThreeMode) {
+      if (!this.inThreeMode) {
         alert("Please switch to 3D mode first!");
+      } else {
+        if (str == "satellite") this.mainvision.setSatellite();
+        else this.mainvision.setNormalMap();
       }
-      else
-      {
-        if(str == "satellite")
-          this.mainvision.setSatellite();
-        else
-          this.mainvision.setNormalMap();
-      }
-    }
+    },
   },
   mainvision: MainVision,
   inThreeMode: false,
@@ -78,21 +85,21 @@ export default {
     },
     inThreeMode() {
       return this.$store.state.inThreeMode;
-    }
+    },
   },
 
   selectPicture(picture) {
     // Invoke your callback here with the selected picture
     console.log("Selected Picture:", picture);
   },
-}
+};
 </script>
-  
+
 <style scoped>
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   /* Font name to use later */
-  src: url('../assets/fonts/Montserrat-Light.ttf') format('truetype');
+  src: url("../assets/fonts/Montserrat-Light.ttf") format("truetype");
   /* URL to the TTF file */
   /* Add other font properties here if needed */
 }
@@ -124,7 +131,6 @@ export default {
   /* z-index: 3; */
   word-wrap: break-word;
   align-items: center;
-
 }
 
 .navbar-item {
@@ -156,7 +162,7 @@ export default {
   width: 25px;
   height: 25px;
   transform-origin: 0 0;
-  background-image: url('../assets/home/right-arrow.png');
+  background-image: url("../assets/home/right-arrow.png");
   z-index: 10;
   position: relative;
 }
@@ -213,4 +219,3 @@ export default {
   transition: font-size 0.5s;
 }
 </style>
-  

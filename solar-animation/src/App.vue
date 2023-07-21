@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <NavbarComponent class="navbar-component"/>
     <router-view />
   </div>
 </template>
@@ -35,16 +34,15 @@ nav {
 </style>
 
 <script>
-import NavbarComponent from '@/components/NavBar.vue';
+//import NavbarComponent from "@/components/NavBar.vue";
 
 export default {
   // Define the component name
-  name: 'App',
+  name: "App",
 
   // Define the components property
   components: {
-    NavbarComponent,
-  }
-}
-
+    //NavbarComponent,
+  },
+};
 </script>
