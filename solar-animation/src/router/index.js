@@ -20,6 +20,11 @@ const routes = [
     name: "MainVisionmode",
     component: () => import('../views/MainVisionmodeView.vue'),
   },
+  {
+    path: "/VerticalSideView",
+    name: "VericalSideView",
+    component: () => import('../views/VerticalSideView.vue'),
+  },
 ]
 
 const router = createRouter({

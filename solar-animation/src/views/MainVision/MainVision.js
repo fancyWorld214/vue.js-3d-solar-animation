@@ -1,6 +1,6 @@
 /* eslint-disable */
 import * as BABYLON from "babylonjs";
-export default class MainVision {
+export default class MainVision{
     constructor(canvas, engine, scene, camera) {
         this.canvas = canvas;
         this.engine = engine;
@@ -706,6 +706,6 @@ export default class MainVision {
             this.earth.material=this.material1;
         else 
             this.earth.material=this.material0;
-    }
+   }
 
 }

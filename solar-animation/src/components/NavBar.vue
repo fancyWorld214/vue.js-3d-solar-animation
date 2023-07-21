@@ -6,8 +6,8 @@
         Visual Transformation
         <div class="navbar-dropdown" v-show="showVisualTransformationsDropdown">
           <ul>
-            <li>Satellite Map</li>
-            <li>Normal Map</li>
+            <li @click="changeSkin('satellite')">Satellite Map</li>
+            <li @click="changeSkin('normal')">Normal Map</li>
           </ul>
         </div>
       </div>
@@ -16,8 +16,7 @@
         View Mode
         <div class="navbar-dropdown">
           <ul>
-            <li><router-link class="globalFont" to="/sideview">Side View</router-link></li>
-            <li><a class="globalFont" href="/verticalview">Vertical View</a></li>
+            <li><router-link class="globalFont" to="/VerticalSideView">Side&Vertical View</router-link></li>
             <li><router-link class="globalFont" to="/MainVisionmode">3D Mode</router-link></li>
           </ul>
         </div>
@@ -37,35 +36,67 @@
 </template>
   
 <script>
-export default class NavbarComponent {
-  showNavibar = false;
-  showVisualTransformationsDropdown = false;
+import MainVision from "../views/MainVision/MainVision.js";
 
-  showNavbar() {
-    this.showNavibar = true;
-  }
+export default {
+  data: () => ({
+    showNavibar: false,
+    showVisualTransformationsDropdown: false,
+  }),
+  methods: {
+    showNavbar() {
+      this.showNavibar = true;
+    },
 
-  hideNavbar() {
-    this.showNavibar = false;
-  }
+    hideNavbar() {
+      this.showNavibar = false;
+    },
 
-  showVisualTransformations() {
-    this.showVisualTransformationsDropdown = true;
-  }
+    showVisualTransformations() {
+      this.showVisualTransformationsDropdown = true;
+    },
+
+    changeSkin(str) {
+      if(!this.inThreeMode) {
+        alert("Please switch to 3D mode first!");
+      }
+      else
+      {
+        if(str == "satellite")
+          this.mainvision.setSatellite();
+        else
+          this.mainvision.setNormalMap();
+      }
+    }
+  },
+  mainvision: MainVision,
+  inThreeMode: false,
+
+  computed: {
+    mainvision() {
+      return this.$store.state.mainvision;
+    },
+    inThreeMode() {
+      return this.$store.state.inThreeMode;
+    }
+  },
 
   selectPicture(picture) {
     // Invoke your callback here with the selected picture
     console.log("Selected Picture:", picture);
-  }
+  },
 }
 </script>
   
 <style scoped>
 @font-face {
-      font-family: 'Montserrat'; /* Font name to use later */
-      src: url('../assets/fonts/Montserrat-Light.ttf') format('truetype'); /* URL to the TTF file */
-      /* Add other font properties here if needed */
+  font-family: 'Montserrat';
+  /* Font name to use later */
+  src: url('../assets/fonts/Montserrat-Light.ttf') format('truetype');
+  /* URL to the TTF file */
+  /* Add other font properties here if needed */
 }
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -93,7 +124,7 @@ export default class NavbarComponent {
   /* z-index: 3; */
   word-wrap: break-word;
   align-items: center;
-  
+
 }
 
 .navbar-item {
@@ -125,7 +156,7 @@ export default class NavbarComponent {
   width: 25px;
   height: 25px;
   transform-origin: 0 0;
-  background-image: url('../assets/img/home/right-arrow.png');
+  background-image: url('../assets/home/right-arrow.png');
   z-index: 10;
   position: relative;
 }
@@ -181,6 +212,5 @@ export default class NavbarComponent {
   text-decoration: none;
   transition: font-size 0.5s;
 }
-
 </style>
   
