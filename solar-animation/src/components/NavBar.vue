@@ -21,14 +21,8 @@
         View Mode
         <div class="navbar-dropdown">
           <ul>
-            <li>
-              <a class="globalFont" href="/VerticalSideView"
-                >VerticalSideView</a
-              >
-            </li>
-            <li>
-              <a class="globalFont" href="/MainVisionmode">3D Mode</a>
-            </li>
+            <li><router-link class="globalFont" to="/VerticalSideView">Side&Vertical View</router-link></li>
+            <li><router-link class="globalFont" to="/MainVisionmode">3D Mode</router-link></li>
           </ul>
         </div>
       </div>
@@ -113,7 +107,7 @@ export default {
   background: rgba(0, 0, 0, 0);
   border-radius: 15px;
   position: fixed;
-  top: 14px;
+  top: 50px;
   left: 0;
   z-index: 3;
   align-items: center;

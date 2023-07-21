@@ -154,12 +154,13 @@
 @import "../assets/verticalAndSide/css/ui.scss";
 @import "../assets/verticalAndSide/css/view.scss"; */
 @import "../assets/verticalAndSide/css/styles.css";
+@import "../assets/verticalAndSide/css/NavBar.css";
 
-.navbar-component {
+/* .navbar-component {
   position: relative;
-  //background-color: #f0f0f0;
+  background-color: #f0f0f0;
   padding: 10px;
-}
+} */
 </style>
 
 <script>
