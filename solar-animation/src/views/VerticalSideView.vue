@@ -173,6 +173,9 @@ export default {
     NavbarComponent,
     // HelloWorld
   },
+  methods: {
+    
+  },
   mounted() {
     // jQuery(window).load(function () {
 

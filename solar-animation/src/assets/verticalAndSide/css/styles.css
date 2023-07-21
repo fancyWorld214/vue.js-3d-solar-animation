@@ -148,12 +148,19 @@ body {
 #universe {
   z-index: 1;
   position: absolute;
+  top: 5%;
   overflow: hidden;
   width: 100%;
   height: 100%;
   background-position: center 40%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#universe {
+  transition-property: opacity, margin;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
 }
 
 #galaxy {
@@ -339,7 +346,7 @@ body {
 .view-3D .opening .planet,
 .view-3D .opening .satelite,
 .view-3D .opening .ring {
-  transition-duration: 4s;
+  transition-duration: 2s;
 }
 
 #universe.opening #sun {

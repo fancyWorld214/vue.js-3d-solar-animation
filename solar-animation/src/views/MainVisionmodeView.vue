@@ -15,7 +15,6 @@
   >
     <div class="navbar-items">
       <div class="navbar-item" @mouseenter="showVisualTransformations">
-        <span class="navbar-icon"></span>
         Visual Transformation
         <div class="navbar-dropdown" v-show="showVisualTransformationsDropdown">
           <ul>
@@ -25,7 +24,6 @@
         </div>
       </div>
       <div class="navbar-item">
-        <span class="navbar-icon"></span>
         View Mode
         <div class="navbar-dropdown">
           <ul>
@@ -43,7 +41,6 @@
         </div>
       </div>
       <div class="navbar-item">
-        <span class="navbar-icon"></span>
         Picture-in-Picture
         <div class="navbar-dropdown">
           <ul>
@@ -100,7 +97,7 @@ video {
   background: rgba(0, 0, 0, 0);
   border-radius: 15px;
   position: fixed;
-  top: 100px;
+  top: 50px;
   left: 0;
   z-index: 3;
   align-items: center;

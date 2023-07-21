@@ -7,32 +7,29 @@
   >
     <div class="navbar-items">
       <div class="navbar-item" @mouseenter="showVisualTransformations">
-        <span class="navbar-icon"></span>
         Visual Transformation
         <div class="navbar-dropdown" v-show="showVisualTransformationsDropdown">
           <ul>
-            <li @click="changeSkin('satellite')">Satellite Map</li>
-            <li @click="changeSkin('normal')">Normal Map</li>
+            <li @click="alert">Satellite Map</li>
+            <li @click="alert">Normal Map</li>
           </ul>
         </div>
       </div>
       <div class="navbar-item">
-        <span class="navbar-icon"></span>
         View Mode
         <div class="navbar-dropdown">
           <ul>
-            <li><router-link class="globalFont" to="/VerticalSideView">Side&Vertical View</router-link></li>
-            <li><router-link class="globalFont" to="/MainVisionmode">3D Mode</router-link></li>
+            <li @click="toSideVerticalView">Side&Vertical View</li>
+            <li @click="toThreeDView">3D Mode</li>
           </ul>
         </div>
       </div>
       <div class="navbar-item">
-        <span class="navbar-icon"></span>
         Picture-in-Picture
         <div class="navbar-dropdown">
           <ul>
-            <li @click="selectPicture('Sun Eclipse')">Sun Eclipse</li>
-            <li @click="selectPicture('Moon Eclipse')">Moon Eclipse</li>
+            <li @click="alert">Sun Eclipse</li>
+            <li @click="alert">Moon Eclipse</li>
           </ul>
         </div>
       </div>
@@ -57,8 +54,20 @@ export default {
       this.showNavibar = false;
     },
 
+    alert() {
+      alert("Please switch to the 3D view firstly.");
+    },
+
     showVisualTransformations() {
       this.showVisualTransformationsDropdown = true;
+    },
+    
+    toSideVerticalView() {
+      this.$router.push("/");
+    },
+
+    toThreeDView() {
+      this.$router.push("/MainVisionmode");
     },
 
     changeSkin(str) {
