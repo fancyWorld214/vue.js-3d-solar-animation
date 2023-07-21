@@ -701,10 +701,10 @@ export default class MainVision{
             // });
         }
     }
-    changeskin(){
-        if(this.earth.material==this.material0)
+    changeSkin(str){
+        if(this.earth.material==this.material0&&str=='normal')
             this.earth.material=this.material1;
-        else 
+        else if(this.earth.material==this.material1&&str=='satellite')
             this.earth.material=this.material0;
    }
 
