@@ -28,7 +28,7 @@
         <div class="navbar-dropdown">
           <ul>
             <li>
-              <router-link class="globalFont" to="/VerticalSideView"
+              <router-link class="globalFont" to="/"
                 >Side&Vertical View</router-link
               >
             </li>
@@ -344,7 +344,6 @@ export default {
           recorder2.start();
         }, 50);
 
-        
         // setUpCameraMovingPattern(camera0, scene0);
 
         // Resize
